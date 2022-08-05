@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="facebook">
+        <h1>Welcome to Facebook</h1>
+    </div>
+    <form action="/new-post" method="post">
+        <button>Add Post</button>
+        <input type="text" placeholder="title" name="title" required maxlength="15">
+        <input type="text" placeholder="massage" name="massage" required  minlength="40" size="150">
+    </form>
+    <div>
+        <% if (data.length > 0) { %> 
+            <% data.forEach( raports => { %>
+                <div class="raports">
+                    <h1 class="para"><%= raports.title %></h1>
+                    <p class="para"><%= raports.massage %></p>
+                    <h5><%= raports.createdAt %></h5>
+                    <a href="/raport/<%= raports._id %>/info"><h4>see more</h4></a>
+                </div>
+            <% }) %>
+            <% } else { %> 
+            nothing is in DB 
+        <% } %>
+    </div>
+</body>
+</html>

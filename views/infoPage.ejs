@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="facebook">
+        <h1>Welcome to Facebook</h1>
+    </div>
+    
+    <div>
+        <h2>here we can edit the post</h2>
+        <div class="raports">
+        <h1 class="para"><%= raports.title %></h1>
+        <p class="para"><strong><%= raports.massage %></strong></p>
+        <h5><%= raports.createdAt %></h5>
+        </div>
+    </div>
+    <div>
+        <form action="/delete-Post/<%= raports._id %>" method="get">
+            <button>Delete</button>
+        </form>
+        <form action="/edit-Posts/<%= raports._id %>" method="get">
+            <button>Edit</button>
+        </form>      
+    </div>
+</body>
+</html>
